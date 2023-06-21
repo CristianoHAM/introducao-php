@@ -13,11 +13,18 @@
     <h2>cristiano</h2>
     <p>exercicio 1</p><br>
 
+    <form action="" method="post">
+        vida:
+        <input type="text" name="vida" id="">
+        dano:
+        <input type="text" name="dano" id="">
+        <input type="submit" value="enviar" name="enviar">
+    </form>
+
+
     <b>Resultado</b>
     <div class="resultado">
         <?php
-        $vida = 100;
-        $dano = 80;
         function personagemMorreu($v, $d)
         {
             $v -= $d;
@@ -27,7 +34,14 @@
                 return 0;
             }
         }
-        echo personagemMorreu($vida, $dano);
+        if(isset($_POST['enviar'])){
+
+            $vida = $_POST['vida'];
+            $dano = $_POST['dano'];
+            echo personagemMorreu($vida, $dano);
+        }else{
+            echo '<br>';
+        }
         ?>
     </div>
 </body>

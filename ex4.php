@@ -12,15 +12,25 @@
 <body>
     <h2>cristiano</h2>
     <p>exercicio 1</p><br>
+    <form action="" method="post">
+        <input type="number" name="numero" id="">
+        <input type="submit" value="enviar" name="enviar">
+    </form>
 
     <b>Resultado</b>
     <div class="resultado">
         <?php
-        $numero = 5;
+        if(isset($_POST['enviar']) && $_POST['numero'] != ''){
 
-        for ($i = 1; $i <= 10; $i++) {
-            echo $numero * $i . "<br>";
+            $numero = $_POST['numero'];
+            
+            for ($i = 1; $i <= 10; $i++) {
+                echo $numero * $i . "<br>";
+            }
+        }else{
+            echo 'preencha os dados do formulario<br>';
         }
+
         ?>
     </div>
 
